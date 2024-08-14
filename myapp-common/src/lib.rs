@@ -10,6 +10,8 @@ use network_types::ip::{IpProto, Ipv4Hdr};
 use network_types::tcp::TcpHdr;
 use network_types::udp::UdpHdr;
 
+pub const OCKAM_TCP_PORTAL_PROTOCOL: u8 = 217;
+
 #[inline(always)]
 pub fn replace_src_ip(ipv4hdr: *mut Ipv4Hdr, new_ip: Ipv4Addr) {
     unsafe {
