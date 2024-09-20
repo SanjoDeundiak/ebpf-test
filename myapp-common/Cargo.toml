@@ -8,7 +8,8 @@ default = []
 user = ["aya"]
 
 [dependencies]
-aya = { version = "0.12", optional = true, path = "../../aya/aya" }
+aya = { version = "0.12", optional = true }
+#aya = { version = "0.12", path = "../../aya/aya", optional = true }
 network-types = "0.0.6"
 log = "0.4.22"
 

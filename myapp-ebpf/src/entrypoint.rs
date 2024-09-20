@@ -8,11 +8,13 @@ use aya_ebpf::programs::TcContext;
 mod common;
 
 #[classifier]
-pub fn egress(ctx: TcContext) -> i32 {
-    match common::try_handle(ctx, false) {
-        Ok(ret) => ret,
-        Err(ret) => ret,
-    }
+pub fn ockam_ingress(ctx: TcContext) -> i32 {
+    common::try_handle(ctx, true).unwrap_or_else(|ret| ret)
+}
+
+#[classifier]
+pub fn ockam_egress(ctx: TcContext) -> i32 {
+    common::try_handle(ctx, false).unwrap_or_else(|ret| ret)
 }
 
 #[panic_handler]

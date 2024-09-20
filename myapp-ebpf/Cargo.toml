@@ -4,18 +4,24 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-aya-ebpf = { version = "0.1.0", path = "../../aya/ebpf/aya-ebpf" }
-aya-log-ebpf = { version = "0.1.0", path = "../../aya/ebpf/aya-log-ebpf" }
+aya-ebpf = "0.1.0"
+aya-log-ebpf = "0.1.0"
+#aya-ebpf = { version = "0.1.0", path = "../../aya/ebpf/aya-ebpf" }
+#aya-log-ebpf = { version = "0.1.0", path = "../../aya/ebpf/aya-log-ebpf" }
 myapp-common = { path = "../myapp-common" }
 network-types = "0.0.6"
 
 [[bin]]
-name = "myapp_ingress"
-path = "src/ingress.rs"
+name = "ockam_entrypoint"
+path = "src/entrypoint.rs"
 
-[[bin]]
-name = "myapp_egress"
-path = "src/egress.rs"
+#[[bin]]
+#name = "myapp_ingress"
+#path = "src/ockam_ingress.rs"
+#
+#[[bin]]
+#name = "myapp_egress"
+#path = "src/ockam_egress.rs"
 
 [profile.dev]
 opt-level = 3
